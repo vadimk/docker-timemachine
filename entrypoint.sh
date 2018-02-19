@@ -14,7 +14,8 @@ if [ ! -e /.initialized_afp ]; then
     zeroconf = no" >> /etc/afp.conf
     
     if [ ! -z $AFP_HOSTNAME ]; then
-        echo "\nhostname = $AFP_HOSTNAME" >> /etc/afp.conf
+        echo "
+    hostname = $AFP_HOSTNAME" >> /etc/afp.conf
     fi
 
     touch /.initialized_afp
