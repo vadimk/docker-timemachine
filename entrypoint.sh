@@ -12,6 +12,10 @@ if [ ! -e /.initialized_afp ]; then
     log file = /var/log/afpd.log
     log level = default:warn
     zeroconf = no" >> /etc/afp.conf
+    
+    if [ ! -z $AFP_HOSTNAME ]; then
+        echo "\nhostname = $AFP_HOSTNAME" >> /etc/afp.conf
+    fi
 
     touch /.initialized_afp
 fi
